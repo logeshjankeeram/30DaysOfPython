@@ -1,1 +1,1 @@
-# this is me learning about github
+# This is me learning about github
