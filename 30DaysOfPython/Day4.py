@@ -1,4 +1,4 @@
-'''
+
 # Single line comment
 letter = 'P'                # A string could be a single character or a bunch of texts
 print(letter)               # P
@@ -68,7 +68,7 @@ last_three = language[-3:]
 print(last_three)   # hon
 last_three = language[3:]
 print(last_three)   # hon
-'''
+
 # Skipping character while splitting Python strings
 language = 'Python'
 pto = language[0:6:2] # variable[start:stop:step]
