@@ -1,3 +1,18 @@
+# set syntax
+st = {'item1', 'item2', 'item3', 'item4'}
+# tupple syntax
+tpl = ('item1', 'item2','item3')
+
+# list syntax
+lst = []
+
+# syntax
+empty_dict = {}
+# Dictionary with data values
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+
+
+
 empty_list = list() # this is an empty list, no item in the list
 print(len(empty_list)) # 0
 
