@@ -193,5 +193,6 @@ print(ages)
 ages.sort(reverse=True)
 print(ages) 
 
-
+result = (1 + 0.025) ** 1000 * 0.93
+print(result)
 
