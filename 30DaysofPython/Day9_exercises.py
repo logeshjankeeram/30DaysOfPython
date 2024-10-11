@@ -78,12 +78,13 @@ else:
  * If a person skills has only JavaScript and React, print('He is a front end developer'), if the person skills has Node, Python, MongoDB, print('He is a backend developer'), if the person skills has React, Node and MongoDB, Print('He is a fullstack developer'), else print('unknown title') - for more accurate results more conditions can be nested!
  * If the person is married and if he lives in Finland, print the information in the following format:'''
 
-person={
+
+person = {
     'first_name': 'Asabeneh',
     'last_name': 'Yetayeh',
     'age': 250,
     'country': 'Finland',
-    'is_marred': True,
+    'is_married': True, 
     'skills': ['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
     'address': {
         'street': 'Space street',
@@ -91,8 +92,28 @@ person={
     }
 }
 
-if skills in person:
-    #print(person['skills'][3])
-    #if "python" in person['skills'][]
-        print('present')
+
+if 'skills' in person:
+
+    skills = person['skills']
+
+    print("Middle skill:", skills[3])
+
+
+    has_python_skill = 'Python' in skills
+    print("Has Python skill:", has_python_skill)
+
+
+    if skills == ['JavaScript', 'React']:
+        print('He is a front end developer')
+    elif skills == ['Node', 'Python', 'MongoDB']:
+        print('He is a backend developer')
+    elif skills == ['React', 'Node', 'MongoDB']:
+        print('He is a fullstack developer')
+    else:
+        print('Unknown title')
+
+
+if person['is_married'] and person['country'] == 'Finland':
+    print(f"{person['first_name']} {person['last_name']} is married and lives in {person['country']}.")
 
