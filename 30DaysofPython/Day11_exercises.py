@@ -152,10 +152,92 @@ print(remove_item(['h','e',1,5],'e'))
 #Declare a function named sum_of_numbers. It takes a number parameter and it adds all the numbers in that range.
 
 def sum_of_numbers(*x):
-    y=0
+    y=0 
     for i in x:
         y += i
     return y
 print(sum_of_numbers(1,2,3,3,4,5))
 
 #Declare a function named sum_of_odds. It takes a number parameter and it adds all the odd numbers in that range
+
+def sum_of_odds(*x):
+    odd=0
+    even=0
+    for i in x:
+        if (i%2) == 0:
+            continue
+        else:
+            odd += i
+    return odd
+print(sum_of_odds(1,2,3,3,4,5))
+
+#Declare a function named sum_of_evens. It takes a number parameter and it adds all the even numbers in that range
+
+def sum_of_odds(*x):
+    odd=0
+    even=0
+    for i in x:
+        if (i%2) == 0:
+            odd += i
+            
+        else:
+            continue
+    return odd
+print(sum_of_odds(1,2,3,3,4,5))
+
+#Declare a function named evens_and_odds . 
+# It takes a positive integer as parameter and it counts number of evens and odds in the number.
+
+def sum_of_odds(*x):
+    odd=0
+    even=0
+    for i in x:
+        if (i%2) == 0:
+            even += 1
+            
+        else:
+            odd += 1
+    return odd,even
+print(f'sum of odd and even respectively is :{sum_of_odds(1,2,3,3,4,5)}')
+
+#Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
+
+def factorial(x):
+    y=1
+    for i in range(1,x+1):
+        y= y*i
+    return y
+print(factorial(5))
+
+#Call your function is_empty, it takes a parameter and it checks if it is empty or not
+
+def empty(x):                  
+    y=0
+    for i in x:
+        if i!='':
+            y+=1
+    if y>0:
+        return "not empty"
+    else:
+        return "empty"
+
+print(empty(()))
+
+#my answer above vs chatgpt down
+
+def is_empty(param):
+    if isinstance(param, (str, list, tuple, dict)):
+        return len(param) == 0  # Return True if the length is 0
+    return False  # For non-empty values or unsupported types, return False
+
+#or
+
+def is_empty(param):
+    return not param  # Returns True if param is empty or evaluates to False
+
+print(is_empty([]))
+
+
+#Write different functions which take lists. 
+# They should calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, 
+# calculate_std (standard deviation).
