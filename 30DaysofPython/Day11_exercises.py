@@ -241,3 +241,56 @@ print(is_empty([]))
 #Write different functions which take lists. 
 # They should calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, 
 # calculate_std (standard deviation).
+
+lst = [2,3,4,5,5,6,7,8]
+
+def calculate_mean(x):
+    sum=0
+    for i in x:
+        sum+=i
+
+    return sum/len(x)
+print(calculate_mean(lst))
+
+
+lst = [int(i) for i in input("enter numbers separated by spaces: ").split()]  #need to remember this by heart
+lst.sort()
+def calculate_median(x):
+    median=0
+    n=len(x)
+    if n%2==0:
+        median=((x[n//2])+(x[(n//2)-1]))/2       #index can only be integer so need to use integer division
+    else:
+        median=x[n//2]
+    return median
+print(calculate_median(lst))
+
+
+lst = [int(i) for i in input("Enter numbers separated by spaces: ").split()]
+frequency = {}
+
+def calculate_mode(x):
+  
+    for num in x:
+        if num in frequency:
+            frequency[num] += 1
+        else:
+            frequency[num] = 1  
+    
+    max_count = 0  
+    mode = []  
+    
+    
+    for num, count in frequency.items():
+        if count > max_count:
+            max_count = count
+            mode = [num]  
+        elif count == max_count:
+            mode.append(num)  
+    
+    return mode
+
+
+print("Mode(s):", calculate_mode(lst))
+
+
