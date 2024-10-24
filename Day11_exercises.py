@@ -294,3 +294,84 @@ def calculate_mode(x):
 print("Mode(s):", calculate_mode(lst))
 
 
+#calculate range
+#range = max_value - min_value
+
+
+lst = [int(i) for i in input ("Enter numbers separated by spaces: ").split()]
+
+def calculate_range(x):
+    range=max(lst)-min(lst)
+    return range
+
+print("Range:", calculate_range(lst))
+
+
+#calculate variance
+'''Calculate mean
+    Calculate squared deviation
+    Calculate sum of square deviation
+    Divide by total elements'''
+import math
+lst = [int(i) for i in input("Enter values separated by spaces: ").split()]
+
+def calculate_mean(x):
+    sum=0
+    for i in x:
+        sum+=i
+
+    return sum/len(x)
+print(calculate_mean(lst))
+
+def calculate_sd(x):
+    dev=[]
+
+    mean=calculate_mean(x)
+
+    dev=[(mean-i)**2 for i in x]
+    y = sum(dev)
+    Variance = y/len(x)
+    sd = math.sqrt(Variance)
+
+    return sd
+
+print(f"standard deviation is: {calculate_sd(lst)}")
+
+#ORRRRR
+
+import statistics
+
+data = [int(i) for i in input("enter numbers separated by comma: ").split()]
+std_dev = statistics.stdev(data)
+
+print(f"The standard deviation is: {std_dev}")
+
+
+#write a function to check if prime
+'''what is prime? a number is prime if i can only be devided by itself or one for example:
+2,3,5,7,11,13,17,19,23
+
+356,178,89,4,2
+if squareroot = 0 and divisible by 2,3,4,5,7=not prime
+
+'''
+import math
+def _prime(x):
+    count=0
+    for i in [2,3,5,7,11,13]:
+        
+        if (x % i) ==0:
+            count+=1
+        
+    if ((math.sqrt(x)%1)==0 or count>0):
+        print(f"{x} is not prime")
+    else:
+        print(f"{x} is prime")
+
+
+    return 0
+_prime(int(input("Enter a number")))
+
+
+
+    
