@@ -358,12 +358,12 @@ if squareroot = 0 and divisible by 2,3,4,5,7=not prime
 import math
 def _prime(x):
     count=0
-    for i in [2,3,5,7,11,13]:
+    for i in range(2, int(math.sqrt(x)) + 1):
         
         if (x % i) ==0:
             count+=1
         
-    if ((math.sqrt(x)%1)==0 or count>0):
+    if (count>0):
         print(f"{x} is not prime")
     else:
         print(f"{x} is prime")
@@ -371,6 +371,132 @@ def _prime(x):
 
     return 0
 _prime(int(input("Enter a number")))
+
+#Write a functions which checks if all items are unique in the list.
+
+import math
+
+def unique(x):
+    count=0
+    lst={}
+    for i in x:
+        if i in lst:
+            count+=1
+            print(f"check {count}")
+        else:
+            lst[i]=""
+
+    if count >0:
+        print("All items in list are not unique")
+    else:
+         print("All items in list are unique")
+    return 0
+
+mylist=[i for i in input("Enter values separated by comma").split(",")]
+
+print(unique(mylist))
+
+
+# Write a function which checks if all the items of the list are of the same data type.
+
+import math
+
+def dtype(x):
+    count=0
+
+    for i in x:
+        y = type(i)
+        if y not in types:
+            count+=1
+            print("Items of the list are not of the same data type")
+            break
+    if count==0:
+         print("Items of the list are of the same data type")
+    
+    return 0
+
+print(dtype([1,2,3,4,"Data"]))
+
+# Write a function which check if provided variable is a valid python variable
+# must begin with a letter or an underscore
+# Variable names cannot be the same as Python reserved keywords (like if, else, for, while, def, class, etc.).
+# Variable names cannot include special characters like @, #, $, %, &, *, etc., or spaces but 
+# Can include letters (both uppercase and lowercase), digits, and underscores (_)
+import keyword
+
+def valid_var(var_name):
+
+    if not var_name:
+        print("Not a valid Python variable: empty string")
+        return False
+
+    
+    if not (var_name[0].isalpha() or var_name[0] == '_'):
+        print("Not a valid Python variable: must start with a letter or underscore")
+        return False
+
+
+    for char in var_name:
+        if not (char.isalnum() or char == '_'):
+            print("Not a valid Python variable: must contain only letters, digits, or underscores")
+            return False
+
+  
+    if keyword.iskeyword(var_name):
+        print("Not a valid Python variable: reserved keyword")
+        return False
+
+    print("Valid Python variable")
+    return True
+
+
+valid_var("myVariable")  
+valid_var("2ndVariable")  
+valid_var("class")  
+valid_var("my_variable!") 
+
+# Go to the data folder and access the countries-data.py file.
+# Create a function called the most_spoken_languages in the world. It should return 10 or 20 most spoken languages in the world in descending order
+# Create a function called the most_populated_countries. It should return 10 or 20 most populated countries in descending order.
+# ({},{},{6 different keys})
+language_count = {}
+for country in countries_data:
+    for language in country["languages"]:
+        if language in language_count:
+            language_count[language] += country["population"]
+        else:
+            language_count[language] = country["population"]
+
+top10=[]
+
+for _ in range(10):
+    max_language = []
+    max_population = 0
+
+    for (language, population) in language_count.items():
+        if population > max_population:
+            max_language= language
+            max_population = population
+        
+    top10.append((max_language,max_population))
+    del language_count[max_language]
+
+print("Ten most spoken languages:")
+for language, population in top10:
+    print(f"{language}: {population}")
+
+max_population=0
+NameC= ""
+top10=[]
+for _ in range(10):
+    for country in countries_data:
+        if country['population']>max_population:
+            max_population=country["population"]
+            NameC=country["name"]
+    top10.append((NameC,max_population))
+
+
+
 
 
 
