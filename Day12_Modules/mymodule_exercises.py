@@ -83,51 +83,96 @@
 # (six hexadecimal numbers written after #. Hexadecimal numeral system is made out of 16 symbols, 0-9 
 # and first 6 letters of the alphabet, a-f. Check the task 6 for output'''
 
-import random
-import string
+# import random
+# import string
 
-def list_of_hexa_colors():
-    x=''
-    b = int(input("Enter the number of hex: "))
-    c=[]
+# def list_of_hexa_colors():
+#     x=''
+#     b = int(input("Enter the number of hex: "))
+#     c=[]
     
-    h="abcdef1234567890"
+#     h="abcdef1234567890"
 
 
-    for _ in range(0,b):
-        x = "".join(random.choices(h, k=6))
-        c.append(f"#{x}")
+#     for _ in range(0,b):
+#         x = "".join(random.choices(h, k=6))
+#         c.append(f"#{x}")
     
-    # Return the RGB color as a string
-    return c
+#     # Return the RGB color as a string
+#     return c
 
-# Print the generated RGB color
-print(list_of_hexa_colors())
+# # Print the generated RGB color
+# print(list_of_hexa_colors())
 
 '''Write a function list_of_rgb_colors which returns any number of RGB colors in an array.'''
 
-import random
-import string
+# import random
+# import string
 
-def list_rgb_colors():
-    x=int(input("enter number of colours"))
-    y=[]
+# def list_rgb_colors():
+#     x=int(input("enter number of colours"))
+#     y=[]
    
 
-    for _ in range(0,x):
-        r = random.randint(0, 255)
-        g = random.randint(0, 255)
-        b = random.randint(0, 255)
-        y.append(f"{r},{g},{b}")
+#     for _ in range(0,x):
+#         r = random.randint(0, 255)
+#         g = random.randint(0, 255)
+#         b = random.randint(0, 255)
+#         y.append(f"{r},{g},{b}")
     
-    return y
-print(list_rgb_colors())
+#     return y
+# print(list_rgb_colors())
 
 '''Write a function generate_colors which can generate any number of hexa or rgb colors.'''
 
-def generate_colors():
+# def generate_colors():
    
-    return f"{list_of_hexa_colors()}{list_rgb_colors()}"
+#     return f"{list_of_hexa_colors()}{list_rgb_colors()}"
+
+"""Call your function shuffle_list, it takes a list as a parameter and it returns a shuffled list"""
+
+# import random
+
+# def shuffle_list(x):
+#     l=len(x)
+#     check=[] 
+#     nlist=[]
+
+#     for i in range(0,l):
+        
+#         while True:
+#             r=random.randint(0,l-1)
+#             if r not in check:
+            
+#                 check.append(r)
+#                 nlist.append(x[r])
+#                 break
 
 
 
+
+#     return nlist
+
+# lst=[i for i in input("Enter list items separated by comma").split(",")]
+# print(shuffle_list(lst))
+
+'''Write a function which returns an array of seven random numbers in a range of 0-9. All the numbers must be unique.'''
+
+import random
+
+def nunique():
+    check=[]
+    x=[]
+   
+    while len(x)<8:
+        r=random.randint(0,9)
+        if r  not in check:
+            check.append(r)
+            x.append(r)
+            
+
+
+
+    return x
+
+print(nunique())
